@@ -273,47 +273,65 @@ year = '2035'
 interval = 0.05
 color = 'tab:blue'
 
-title = 'Parallel High Growth Rate Adoption \nof Full House Electrification & PV Only Dominant Pathways\n2035 - Net Load Change Snapshot'
+#title = 'Parallel High Growth Rate Adoption \nof Full House Electrification & PV Only Dominant Pathways\n2035 - Net Load Change Snapshot'
+title = None
 ylim = (-275, 275)
 xlim = (0, 23)
 figsize = (15,10)
 fhe_pv_net = ComputeStats(fhe_pv_overall_net, fhe_base, year)
 fhe_pv_quantiles = ComputeHourlyQuantiles(fhe_pv_net, interval)
-QuantilesFanPlot(fhe_pv_quantiles, interval, color, title, ylim, xlim, True, True, figsize)
+fig, ax = QuantilesFanPlot(fhe_pv_quantiles, interval, color, title, ylim, xlim, True, True, figsize)
+
+fig.savefig('/Users/edf/repos/cec_ng/pathways/fig/synthesis/fhe_pv_only_high_growth_full.png', bbox_inches = 'tight')
 
 title = None
 xlim = (17,21)
 ylim = (-100, 100)
 figsize = (5,5)
-QuantilesFanPlot(fhe_pv_quantiles, interval, color, title, ylim, xlim, False, False, figsize)
+fig, ax = QuantilesFanPlot(fhe_pv_quantiles, interval, color, title, ylim, xlim, False, False, figsize)
+ax.axhline(y = 0, color= 'k', linestyle = 'dotted', linewidth = 2.0)
 
-title = 'Parallel High Growth Rate the Adoption \nof Full House Electrification & BESS Only Dominant Pathways\n2035 - Net Load Change Snapshot'
+fig.savefig('/Users/edf/repos/cec_ng/pathways/fig/synthesis/fhe_pv_only_high_growth_inset.png', bbox_inches = 'tight')
+
+#title = 'Parallel High Growth Rate the Adoption \nof Full House Electrification & BESS Only Dominant Pathways\n2035 - Net Load Change Snapshot'
+title = None
 ylim = (-275, 275)
 xlim = (0, 23)
 figsize = (15,10)
 fhe_bess_net = ComputeStats(fhe_bess_overall_net, fhe_base, year)
 fhe_bess_quantiles = ComputeHourlyQuantiles(fhe_bess_net, interval)
-QuantilesFanPlot(fhe_bess_quantiles, interval, color, title, ylim, xlim, True, True, figsize)
+fig, ax = QuantilesFanPlot(fhe_bess_quantiles, interval, color, title, ylim, xlim, True, True, figsize)
+
+fig.savefig('/Users/edf/repos/cec_ng/pathways/fig/synthesis/fhe_bess_only_high_growth_full.png', bbox_inches = 'tight')
 
 title = None
 xlim = (17,21)
 ylim = (-100, 100)
 figsize = (5,5)
-QuantilesFanPlot(fhe_bess_quantiles, interval, color, title, ylim, xlim, False, False, figsize)
+fig, ax = QuantilesFanPlot(fhe_bess_quantiles, interval, color, title, ylim, xlim, False, False, figsize)
+ax.axhline(y = 0, color= 'k', linestyle = 'dotted', linewidth = 2.0)
 
-title = 'Parallel High Growth Rate Adoption \nof Full House Electrification & PV+BESS Dominant Pathways\n2035 - Net Load Change Snapshot'
+fig.savefig('/Users/edf/repos/cec_ng/pathways/fig/synthesis/fhe_bess_only_high_growth_inset.png', bbox_inches = 'tight')
+
+#title = 'Parallel High Growth Rate Adoption \nof Full House Electrification & PV+BESS Dominant Pathways\n2035 - Net Load Change Snapshot'
+title = None
 ylim = (-275, 275)
 xlim = (0, 23)
 figsize = (15,10)
 fhe_pvbess_net = ComputeStats(fhe_pvbess_overall_net, fhe_base, year)
 fhe_pvbess_quantiles = ComputeHourlyQuantiles(fhe_pvbess_net, interval)
-QuantilesFanPlot(fhe_pvbess_quantiles, interval, color, title, ylim, xlim, True, True, figsize)
+fig, ax = QuantilesFanPlot(fhe_pvbess_quantiles, interval, color, title, ylim, xlim, True, True, figsize)
+
+fig.savefig('/Users/edf/repos/cec_ng/pathways/fig/synthesis/fhe_pv_and_bess_high_growth_full.png', bbox_inches = 'tight')
 
 title = None
 xlim = (17,21)
 ylim = (-100, 100)
 figsize = (5,5)
-QuantilesFanPlot(fhe_pvbess_quantiles, interval, color, title, ylim, xlim, False, False, figsize)
+fig, ax = QuantilesFanPlot(fhe_pvbess_quantiles, interval, color, title, ylim, xlim, False, False, figsize)
+ax.axhline(y = 0, color= 'k', linestyle = 'dotted', linewidth = 2.0)
+
+fig.savefig('/Users/edf/repos/cec_ng/pathways/fig/synthesis/fhe_pv_and_bess_high_growth_inset.png', bbox_inches = 'tight')
 
 # %% Electrification Sweep + PV+BESS
 
@@ -321,46 +339,64 @@ year = '2035'
 interval = 0.05
 color = 'tab:green'
 
-title = 'Parallel High Growth Rate Adoption \nof IAQ-Minor Electrification & PV+BESS Dominant Pathways\n2035 - Net Load Change Snapshot'
+#title = 'Parallel High Growth Rate Adoption \nof IAQ-Minor Electrification & PV+BESS Dominant Pathways\n2035 - Net Load Change Snapshot'
+title = None
 ylim = (-275, 275)
 xlim = (0, 23)
 figsize = (15,10)
 iaq_pvbess_net = ComputeStats(iaq_pvbess_overall_net, iaq_base, year)
 iaq_pvbess_quantiles = ComputeHourlyQuantiles(iaq_pvbess_net, interval)
-QuantilesFanPlot(iaq_pvbess_quantiles, interval, color, title, ylim, xlim, True, True, figsize)
+fig, ax = QuantilesFanPlot(iaq_pvbess_quantiles, interval, color, title, ylim, xlim, True, True, figsize)
+
+fig.savefig('/Users/edf/repos/cec_ng/pathways/fig/synthesis/iaq_minor_pv_and_bess_high_growth_full.png', bbox_inches = 'tight')
 
 title = None
 xlim = (17,21)
 ylim = (-100, 100)
 figsize = (5,5)
-QuantilesFanPlot(iaq_pvbess_quantiles, interval, color, title, ylim, xlim, False, False, figsize)
+fig, ax = QuantilesFanPlot(iaq_pvbess_quantiles, interval, color, title, ylim, xlim, False, False, figsize)
+ax.axhline(y = 0, color= 'k', linestyle = 'dotted', linewidth = 2.0)
 
-title = 'Parallel High Growth Rate the Adoption \nof IAQ-Moderate Electrification & BESS+PV Dominant Pathways\n2035 - Net Load Change Snapshot'
+fig.savefig('/Users/edf/repos/cec_ng/pathways/fig/synthesis/iaq_minor_pv_and_bess_high_growth_inset.png', bbox_inches = 'tight')
+
+#title = 'Parallel High Growth Rate the Adoption \nof IAQ-Moderate Electrification & BESS+PV Dominant Pathways\n2035 - Net Load Change Snapshot'
+title = None
 ylim = (-275, 275)
 xlim = (0, 23)
 figsize = (15,10)
 cmin_pvbess_net = ComputeStats(cmin_pvbess_overall_net, cmin_base, year)
 cmin_pvbess_quantiles = ComputeHourlyQuantiles(cmin_pvbess_net, interval)
-QuantilesFanPlot(cmin_pvbess_quantiles, interval, color, title, ylim, xlim, True, True, figsize)
+fig, ax = QuantilesFanPlot(cmin_pvbess_quantiles, interval, color, title, ylim, xlim, True, True, figsize)
+
+fig.savefig('/Users/edf/repos/cec_ng/pathways/fig/synthesis/iaq_moderate_pv_and_bess_high_growth_full.png', bbox_inches = 'tight')
 
 title = None
 xlim = (17,21)
 ylim = (-100, 100)
 figsize = (5,5)
-QuantilesFanPlot(cmin_pvbess_quantiles, interval, color, title, ylim, xlim, False, False, figsize)
+fig, ax = QuantilesFanPlot(cmin_pvbess_quantiles, interval, color, title, ylim, xlim, False, False, figsize)
+ax.axhline(y = 0, color= 'k', linestyle = 'dotted', linewidth = 2.0)
 
-title = 'Parallel High Growth Rate Adoption \nof Full House Electrification & PV+BESS Dominant Pathways\n2035 - Net Load Change Snapshot'
+fig.savefig('/Users/edf/repos/cec_ng/pathways/fig/synthesis/iaq_moderate_pv_and_bess_high_growth_inset.png', bbox_inches = 'tight')
+
+#title = 'Parallel High Growth Rate Adoption \nof Full House Electrification & PV+BESS Dominant Pathways\n2035 - Net Load Change Snapshot'
+title = None
 ylim = (-275, 275)
 xlim = (0, 23)
 figsize = (15,10)
 fhe_pvbess_net = ComputeStats(fhe_pvbess_overall_net, fhe_base, year)
 fhe_pvbess_quantiles = ComputeHourlyQuantiles(fhe_pvbess_net, interval)
-QuantilesFanPlot(fhe_pvbess_quantiles, interval, color, title, ylim, xlim, True, True, figsize)
+fig, ax = QuantilesFanPlot(fhe_pvbess_quantiles, interval, color, title, ylim, xlim, True, True, figsize)
+
+fig.savefig('/Users/edf/repos/cec_ng/pathways/fig/synthesis/fhe_pv_and_bess_high_growth_full_gn.png', bbox_inches = 'tight')
 
 title = None
 xlim = (17,21)
 ylim = (-100, 100)
 figsize = (5,5)
-QuantilesFanPlot(fhe_pvbess_quantiles, interval, color, title, ylim, xlim, False, False, figsize)
+fig, ax = QuantilesFanPlot(fhe_pvbess_quantiles, interval, color, title, ylim, xlim, False, False, figsize)
+ax.axhline(y = 0, color= 'k', linestyle = 'dotted', linewidth = 2.0)
+
+fig.savefig('/Users/edf/repos/cec_ng/pathways/fig/synthesis/fhe_pv_and_bess_high_growth_inset_gn.png', bbox_inches = 'tight')
 
 # %%
